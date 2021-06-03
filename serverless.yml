@@ -1,5 +1,3 @@
-org: tomspencerlondon
-app: appsyncmasterclass-backend
 service: appsyncmasterclass-backend
 frameworkVersion: '2'
 
@@ -9,12 +7,12 @@ plugins:
 provider:
   name: aws
   runtime: nodejs12.x
+  region: eu-west-1
 
 package:
   exclude:
     - package-lock.json
     - package.json
-
 
 custom:
   appSync:
@@ -46,10 +44,10 @@ resources:
       Type: AWS::Cognito::UserPoolClient
       Properties:
         UserPoolId: !Ref CognitoUserPool
-        Clientname: web
-        ExplicitAutFlows:
+        ClientName: web
+        ExplicitAuthFlows:
           - ALLOW_USER_SRP_AUTH
-          - ALLOW_USER_PASSWORD_AUT
+          - ALLOW_USER_PASSWORD_AUTH
           - ALLOW_REFRESH_TOKEN_AUTH
         PreventUserExistenceErrors: ENABLED
 
