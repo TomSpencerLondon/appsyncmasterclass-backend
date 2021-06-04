@@ -18,7 +18,10 @@
   },
   "homepage": "https://github.com/TomSpencerLondon/appsyncmasterclass-backend#readme",
   "devDependencies": {
+    "aws-sdk": "^2.921.0",
+    "chance": "^1.1.7",
     "serverless": "2.4.0",
-    "serverless-appsync-plugin": "^1.11.3"
+    "serverless-appsync-plugin": "^1.11.3",
+    "serverless-iam-roles-per-function": "^3.2.0"
   }
 }
